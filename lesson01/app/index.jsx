@@ -19,6 +19,12 @@ const app = () => {
         </Pressable>
       </Link>
 
+      <Link href="/spritesheet" style={{ marginHorizontal: 'auto' }} asChild>
+        <Pressable style={styles.button}>
+         <Text style={styles.buttonText}>Spritesheet</Text>
+        </Pressable>
+      </Link>
+
       </ImageBackground>
     </View>
   )
@@ -64,7 +70,9 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: 'rgba(0, 0, 0, 0.75)',
     padding: 4,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginBottom: 50,
+
 
   },
 
