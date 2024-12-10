@@ -1,6 +1,7 @@
-import { View, Text, StyleSheet, ImageBackground } from 'react-native'
+import { View, Text, StyleSheet, ImageBackground, Pressable } from 'react-native'
 import React from 'react'
-import iconImage from '../../assets/images/rock.jpg'
+import iconImage from '@/assets/images/rock.jpg'
+import { Link } from 'expo-router'
 
 const app = () => {
   return (
@@ -10,7 +11,14 @@ const app = () => {
         resizeMode="cover"
         style={styles.image}
       >
-      <Text style={styles.text}>React App</Text>
+      <Text style={styles.title}>React App</Text>
+
+      <Link href="/contact" style={{ marginHorizontal: 'auto' }} asChild>
+        <Pressable style={styles.button}>
+         <Text style={styles.buttonText}>Contact Me</Text>
+        </Pressable>
+      </Link>
+
       </ImageBackground>
     </View>
   )
@@ -32,11 +40,39 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     justifyContent: 'center',
     alignItems: 'center',
+    opacity: 1,
   },
-  text: {
+
+  title: {
     fontSize: 42,
     fontWeight: 'bold',
     color: 'white',
     textAlign: 'center',
+    marginBottom: 120,
   },
+  link: {
+    fontSize: 42,
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    padding: 4, 
+  },
+
+  button: {
+    height: 40,
+    borderRadius: 15,
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    padding: 4,
+    justifyContent: 'center'
+
+  },
+
+  buttonText: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+    padding: 4,
+  }
 });
